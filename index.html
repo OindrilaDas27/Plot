@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing App JS</title>
+</head>
+<body>
+    <div class="container">
+        <section class="tools-board">
+            <div class="row">
+                <label class="title">Shapes</label>
+                <ul class="options">
+                    <li class="option">Rectangle</li>
+                    <li class="option">Circle</li>
+                    <li class="option">Triangle</li>
+                    <li class="option">
+                        <input type="checkbox" id="fill-color">
+                        <label for="fill-color">Fill color</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <label class="title">Options</label>
+                <ul class="options">
+                    <li class="option">Brush</li>
+                    <li class="option">Eraser</li>
+                    <li class="option">
+                        <input type="range" id="size-slider">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <label class="title">Colors</label>
+                <ul class="options">
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <button class="clear-canvas">Clear Canvas</button>
+                <button class="save-img">Save Image</button>
+            </div>
+        </section>
+        <section class="drawing-board">
+
+        </section>
+    </div>
+</body>
+</html>
