@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
     <title>Drawing App JS</title>
 </head>
 <body>
@@ -13,9 +14,9 @@
             <div class="row">
                 <label class="title">Shapes</label>
                 <ul class="options">
-                    <li class="option">Rectangle</li>
-                    <li class="option">Circle</li>
-                    <li class="option">Triangle</li>
+                    <li class="option tool" id="rectangle">Rectangle</li>
+                    <li class="option tool" id="circle">Circle</li>
+                    <li class="option tool" id="triangle">Triangle</li>
                     <li class="option">
                         <input type="checkbox" id="fill-color">
                         <label for="fill-color">Fill color</label>
@@ -26,33 +27,34 @@
             <div class="row">
                 <label class="title">Options</label>
                 <ul class="options">
-                    <li class="option">Brush</li>
-                    <li class="option">Eraser</li>
+                    <li class="option active tool" id="brush">Brush</li>
+                    <li class="option tool" id="eraser">Eraser</li>
                     <li class="option">
                         <input type="range" id="size-slider">
                     </li>
                 </ul>
             </div>
 
-            <div class="row">
+            <div class="row colors">
                 <label class="title">Colors</label>
                 <ul class="options">
                     <li class="option"></li>
+                    <li class="option selected"></li>
                     <li class="option"></li>
                     <li class="option"></li>
-                    <li class="option"></li>
-                    <li class="option"></li>
-                    <li class="option"></li>
+                    <li class="option">
+                        <input type="color" id="color-picker" value="#4a9f7">
+                    </li>
                 </ul>
             </div>
 
-            <div class="row">
+            <div class="row buttons">
                 <button class="clear-canvas">Clear Canvas</button>
                 <button class="save-img">Save Image</button>
             </div>
         </section>
         <section class="drawing-board">
-
+            <canvas width="810" height="564"></canvas>
         </section>
     </div>
 </body>
