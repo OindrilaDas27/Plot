@@ -1,6 +1,8 @@
 const canvas = document.querySelector("canvas"),
 toolBtns = document.querySelectorAll(".tool"),
 fillColor = document.querySelector("#fill-color"),
+sizeSlider = document.querySelector("#size-slider"),
+colorBtns = document.querySelector(".colors"),
 ctx = canvas.getContext("2d");
 
 // global variables with default values
@@ -27,10 +29,20 @@ const drawRect = (e) => {
 const drawCircle = (e) => {
     ctx.beginPath(); //creating a new path to draw circle
     // getting radius for circle according to the mouse pointer
-    let radius = Mat.sqrt(Math.pow((prevMouseX - e.offsetX), 2) + Math.pow((prevMouseY - e.offsetY), 2));
-    ctx.arc(prevMouseX, prevMouseY, 0, 2 * Math.PI); //creating circle according to the mouse pointer
+    let radius = Math.sqrt(Math.pow((prevMouseX - e.offsetX), 2) + Math.pow((prevMouseY - e.offsetY), 2));
+    ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI); //creating circle according to the mouse pointer
     ctx.stroke();
     fillColor.checked ? ctx.fill() : ctx.stroke(); //if fillColor is checked fill circle else draw border circle
+}
+
+const drawTriangle = (e) => {
+    ctx.beginPath(); //creating new path to draw circle
+    ctx.moveTo(prevMouseX, prevMouseY); // moving triangle to the mouse pointer
+    ctx.lineTo(e.offsetX, e.offsetY); // creating first line according to the mouse pointer
+    ctx.lineTo(prevMouseX * 2 - e.offsetX, e.offsetY); // creating bottom line of the triangle 
+    ctx.closePath(); // closing path of the triangle so the third line draw automatically
+    ctx.stroke();
+    fillColor.checked ? ctx.fill() : ctx.stroke(); //if fillColor is checked fill circle else draw border triangle
 }
 
 const startDraw = (e) => {
@@ -53,6 +65,8 @@ const drawing = (e) => {
         drawRect(e);
     }else if (selectedTool === "circle"){
         drawCircle(e);
+    }else {
+        drawTriangle(e);
     }
 }   
 
@@ -63,6 +77,17 @@ toolBtns.forEach(btn => {
         btn.classList.add("active");
         selectedTool = btn.id;
         console.log(btn.id);
+    });
+});
+
+sizeSlider.addEventListener("change", () => brushWidth = sizeSlider.value); //passin slider value as brush Size
+
+colorBtns.forEach(btn => { 
+    btn.addEventListener("click", () => { // adding click event to all color button
+        // removing active class from the previous option and adding on current clicked option
+        document.querySelector(".options .selected").classList.remove("selected");
+        btn.classList.add("selected");
+        console.log(window.getComputedStyle(btn).getPropertyValue("background-color"));
     });
 });
 

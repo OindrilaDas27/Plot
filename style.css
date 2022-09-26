@@ -86,24 +86,24 @@ section {
 }
 
 .colors  .option:nth-child(1){
-    background: #fff;
+    background-color: #fff;
     border: 1px solid grey;
 }
 
 .colors  .option:nth-child(2){
-    background: #000;
+    background-color: #000;
 }
 
 .colors  .option:nth-child(3){
-    background: rgb(254, 2, 2);
+    background-color: rgb(254, 2, 2);
 }
 
 .colors  .option:nth-child(4){
-    background: rgb(5, 254, 1);
+    background-color: rgb(5, 254, 1);
 }
 
 .colors  .option:nth-child(5){
-    background: rgb(0, 144, 254);
+    background-color: rgb(0, 144, 254);
 }
 
 .colors .option.selected::before {
