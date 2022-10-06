@@ -2,14 +2,16 @@ const canvas = document.querySelector("canvas"),
 toolBtns = document.querySelectorAll(".tool"),
 fillColor = document.querySelector("#fill-color"),
 sizeSlider = document.querySelector("#size-slider"),
-colorBtns = document.querySelector(".colors"),
+colorBtns = document.querySelectorAll(".colors .option"),
+// colorPicker = document.querySelectorAll("#color-picker"),
 ctx = canvas.getContext("2d");
 
 // global variables with default values
 let prevMouseX, prevMouseY, snapshot,
 isDrawing = false,
 selectedTool = "brush",
-brushWidth = 5;
+brushWidth = 5,
+selectedColor = "#000";
 
 window.addEventListener("load", () => {
     //setting canvas width and height // offsetWidth/Height returns viewable width/height of an element
@@ -52,6 +54,8 @@ const startDraw = (e) => {
     ctx.beginPath(); //creating new path to draw
     ctx.lineWidth = brushWidth; //passing brushSize as line width
     snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height); //coping canvas data and passing as snapshot value.. this avoids dragging the image
+    ctx.strokeStyle = selectedColor; // passing selectedColor as stroke syle
+    ctx.fillStyle = selectedColor; // passing selectedColor as fill style
 }
 
 const drawing = (e) => {
@@ -87,9 +91,16 @@ colorBtns.forEach(btn => {
         // removing active class from the previous option and adding on current clicked option
         document.querySelector(".options .selected").classList.remove("selected");
         btn.classList.add("selected");
-        console.log(window.getComputedStyle(btn).getPropertyValue("background-color"));
+        // passing selected btn background as selectedColor value
+        selectedColor = window.getComputedStyle(btn).getPropertyValue("background-color");
     });
+
 });
+
+// colorPicker.addEventListener("change", () => {
+//     colorPicker.parentElement.style.background = colorPicker.value;
+//     colorPicker.parentElement.click();
+// });
 
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
