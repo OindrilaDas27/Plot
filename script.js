@@ -62,7 +62,8 @@ const drawing = (e) => {
     if(!isDrawing) return; //if isDrawing is flase return form here
     ctx.putImageData(snapshot, 0, 0); //adding the copied canvas on to this canvas
 
-    if(selectedTool === "brush"){
+    if(selectedTool === "brush" || selectedTool === "eraser"){
+        ctx.strokeStyle = selectedTool === "eraser" ? "#fff" : selectedColor; //if selected tool is eraser then set strokeStyle to white to paint white color onto the existing canvas content else set the stroke color to selected color
         ctx.lineTo(e.offsetX, e.offsetY); //creating line according to the mouse pointer
         ctx.stroke(); //drawin/filling line with color
     } else if (selectedTool === "rectangle"){
