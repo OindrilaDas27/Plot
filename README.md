@@ -30,13 +30,13 @@ For the quick start, you can follow the steps below:
 3. Clone the **forked** repository.
 
 ```yml
-git clone https://github.com/<your-github-username>/Winter-of-Code-2.0-frontend
+git clone https://github.com/<your-github-username>/
 ```
 
 3. Navigate to the project directory.
 
 ```py
-cd Winter-of-Code-2.0-frontend
+cd 
 ```
 
 4. Create a new branch.
