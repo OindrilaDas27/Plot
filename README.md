@@ -30,13 +30,13 @@ For the quick start, you can follow the steps below:
 3. Clone the **forked** repository.
 
 ```yml
-git clone https://github.com/<your-github-username>/
+git clone https://github.com/<your-github-username>/Plot.git
 ```
 
 3. Navigate to the project directory.
 
 ```py
-cd 
+cd Plot
 ```
 
 4. Create a new branch.
