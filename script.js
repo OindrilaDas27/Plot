@@ -106,7 +106,6 @@ colorPicker.addEventListener("change", () => {
 document.querySelector('.save-img').addEventListener("click", ()=>{
     let e = document.getElementById("fileFormat");
     let selectedFormat = e.options[e.selectedIndex].text;
-    console.log(selectedFormat)
     const img    = canvas.toDataURL(`image/${selectedFormat}`)
     downloadImage(img, `draw.${selectedFormat}`);
 })
