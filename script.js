@@ -81,6 +81,11 @@ toolBtns.forEach(btn => {
         document.querySelector(".options .active").classList.remove("active");
         btn.classList.add("active");
         selectedTool = btn.id;
+        if(selectedTool == "eraser"){
+            canvas.style.cursor = "crosshair";
+        }else{
+        canvas.style.cursor = 'crosshair'
+        }
         console.log(btn.id);
     });
 });
