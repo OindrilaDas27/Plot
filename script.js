@@ -3,7 +3,7 @@ toolBtns = document.querySelectorAll(".tool"),
 fillColor = document.querySelector("#fill-color"),
 sizeSlider = document.querySelector("#size-slider"),
 colorBtns = document.querySelectorAll(".colors .option"),
-// colorPicker = document.querySelectorAll("#color-picker"),
+colorPicker = document.querySelector("#color-picker"),
 ctx = canvas.getContext("2d");
 
 // global variables with default values
@@ -25,7 +25,7 @@ const drawRect = (e) => {
         // creating a circle according to the mouse pointer
         return ctx.strokeRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
     }
-    ctx.fillRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);   
+    ctx.fillRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
 }
 
 const drawCircle = (e) => {
@@ -41,7 +41,7 @@ const drawTriangle = (e) => {
     ctx.beginPath(); //creating new path to draw circle
     ctx.moveTo(prevMouseX, prevMouseY); // moving triangle to the mouse pointer
     ctx.lineTo(e.offsetX, e.offsetY); // creating first line according to the mouse pointer
-    ctx.lineTo(prevMouseX * 2 - e.offsetX, e.offsetY); // creating bottom line of the triangle 
+    ctx.lineTo(prevMouseX * 2 - e.offsetX, e.offsetY); // creating bottom line of the triangle
     ctx.closePath(); // closing path of the triangle so the third line draw automatically
     ctx.stroke();
     fillColor.checked ? ctx.fill() : ctx.stroke(); //if fillColor is checked fill circle else draw border triangle
@@ -50,7 +50,7 @@ const drawTriangle = (e) => {
 const startDraw = (e) => {
     isDrawing = true;
     prevMouseX = e.offsetX; //passing current MouseX position as prevMouseX value
-    prevMouseY = e.offsetY; //passing current MouseY position as prevMouseY value 
+    prevMouseY = e.offsetY; //passing current MouseY position as prevMouseY value
     ctx.beginPath(); //creating new path to draw
     ctx.lineWidth = brushWidth; //passing brushSize as line width
     snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height); //coping canvas data and passing as snapshot value.. this avoids dragging the image
@@ -73,7 +73,7 @@ const drawing = (e) => {
     }else {
         drawTriangle(e);
     }
-}   
+}
 
 toolBtns.forEach(btn => {
     btn.addEventListener("click", () => { //adding click event to all tool option
@@ -87,7 +87,7 @@ toolBtns.forEach(btn => {
 
 sizeSlider.addEventListener("change", () => brushWidth = sizeSlider.value); //passin slider value as brush Size
 
-colorBtns.forEach(btn => { 
+colorBtns.forEach(btn => {
     btn.addEventListener("click", () => { // adding click event to all color button
         // removing active class from the previous option and adding on current clicked option
         document.querySelector(".options .selected").classList.remove("selected");
@@ -98,10 +98,10 @@ colorBtns.forEach(btn => {
 
 });
 
-// colorPicker.addEventListener("change", () => {
-//     colorPicker.parentElement.style.background = colorPicker.value;
-//     colorPicker.parentElement.click();
-// });
+colorPicker.addEventListener("change", () => {
+     colorPicker.parentElement.style.background = colorPicker.value;
+     colorPicker.parentElement.click();
+});
 
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
