@@ -1,4 +1,4 @@
-var canvas = document.querySelector("canvas"),
+const canvas = document.querySelector("canvas"),
 toolBtns = document.querySelectorAll(".tool"),
 fillColor = document.querySelector("#fill-color"),
 sizeSlider = document.querySelector("#size-slider"),
@@ -92,11 +92,6 @@ toolBtns.forEach(btn => {
 
 sizeSlider.addEventListener("change", () => brushWidth = sizeSlider.value); //passin slider value as brush Size
 
-colorPicker.addEventListener("change", () => {
-     colorPicker.parentElement.style.backgroundColor = colorPicker.value;
-     colorPicker.parentElement.click();
-});
-
 colorBtns.forEach(btn => {
     btn.addEventListener("click", () => { // adding click event to all color button
         // removing active class from the previous option and adding on current clicked option
@@ -108,6 +103,10 @@ colorBtns.forEach(btn => {
 
 });
 
+colorPicker.addEventListener("change", () => {
+     colorPicker.parentElement.style.background = colorPicker.value;
+     colorPicker.parentElement.click();
+});
 
 document.querySelector('.save-img').addEventListener("click", ()=>{
     let e = document.getElementById("fileFormat");
