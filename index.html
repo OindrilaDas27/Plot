@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
-    <title>Drawing App JS</title>
+    <title>Plot</title>
 </head>
+
 <body>
     <div class="container">
         <section class="tools-board">
@@ -30,7 +32,7 @@
                     <li class="option active tool" id="brush">Brush</li>
                     <li class="option tool" id="eraser">Eraser</li>
                     <li class="option">
-                        <input type="range" id="size-slider" min = "1" max = "30" value ="5">
+                        <input type="range" id="size-slider" min="1" max="30" value="5">
                     </li>
                 </ul>
             </div>
@@ -43,13 +45,33 @@
                     <li class="option"></li>
                     <li class="option"></li>
                     <li class="option">
-                        <input type="color" id="color-picker" value="#4a9f7">
+                        <input type="color" id="color-picker" value="#04a9f7">
                     </li>
                 </ul>
             </div>
 
+            <div class="row colors">
+                <ul class="options">
+                    <li class="option pick">
+                        <input type="color" id="color-picker" value="#04a9f7">
+                    </li>
+                    <li class="option pick">
+                        <input type="color" id="color-picker" value="#04a9f7">
+                    </li>
+                    <li class="option pick">
+                        <input type="color" id="color-picker" value="#04a9f7">
+                    </li>
+                    <li class="option pick">
+                        <input type="color" id="color-picker" value="#04a9f7">
+                    </li>
+                </ul>
+            </div>
             <div class="row buttons">
                 <button class="clear-canvas">Clear Canvas</button>
+                <select class="selectFormat" name="fileFormat" id="fileFormat">
+                    <option value="png">png</option>
+                    <option value="jpg">jpg</option>
+                </select>
                 <button class="save-img">Save Image</button>
             </div>
         </section>
@@ -58,4 +80,5 @@
         </section>
     </div>
 </body>
+
 </html>
