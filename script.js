@@ -108,6 +108,21 @@ colorPicker.addEventListener("change", () => {
      colorPicker.parentElement.click();
 });
 
+document.querySelector('.save-img').addEventListener("click", ()=>{
+    let e = document.getElementById("fileFormat");
+    let selectedFormat = e.options[e.selectedIndex].text;
+    const img    = canvas.toDataURL(`image/${selectedFormat}`)
+    downloadImage(img, `draw.${selectedFormat}`);
+})
+
+function downloadImage(data, filename = 'untitled.jpeg') {
+    var a = document.createElement('a');
+    a.href = data;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+}
+
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", () => isDrawing = false);
