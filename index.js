@@ -1,3 +1,5 @@
+// This index.js file is for making the drop-down functionality
+
 for (let i = 0; i < 3; i++) {
   document
     .getElementsByClassName("fa-chevron-circle-down")
