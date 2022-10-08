@@ -1,178 +1,195 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: #0075ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #0075ff;
 }
 
 .container {
-    display: flex;
-    width: 100%;
-    max-width: 1050px;    
+  display: flex;
+  width: 100%;
+  max-width: 1050px;
 }
 
 section {
-    background: #fff;
-    border-radius: 5px;
-} 
+  background: #fff;
+  border-radius: 5px;
+}
 
-.title{
-text-decoration: underline;
-text-decoration-thickness: 0.5px;
+.title {
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
 }
 
 .tools-board {
-    width: 200px;
-    padding: 15px 22px 0;
-    margin-right: 10px;
-    /* margin-left: -100px; */
+  width: 200px;
+  padding: 15px 22px 0;
+  margin-right: 10px;
+  /* margin-left: -100px; */
 }
 
 .tools-board .row {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.tool.active {
+  color: blue;
+  font-weight: 600;
 }
 
 .row .options {
-    list-style: none;
-    margin: 10px 0 0 5px;
+  list-style: none;
+  margin: 10px 0 0 5px;
 }
 
 .row .options .option {
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .option :where(span, label) {
-    color: black;
-    padding-left: 10px;
+  color: black;
+  padding-left: 10px;
 }
 
 .option:is(:hover, .active) :where(span, label) {
-    color: #0075ff;
+  color: #0075ff;
 }
 
-.option #fill-color {
-    height: 14px;
-    width: 14px;
+.option #bucket {
+  height: 14px;
+  width: 14px;
 }
 
-#fill-color:checked ~ label{
-    color: #0075ff;
+#bucket:checked ~ label {
+  color: #0075ff;
 }
 
 .option #size-slider {
-    width: 100%;
-    height: 5px;
-    margin-top: 10px;
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
 }
 
-.colors .options{
-    display: flex;
-    justify-content: space-between;
+.colors .options {
+  display: flex;
+  justify-content: space-between;
 }
 
 .colors .option {
-    height: 20px;
-    width: 20px;
-    background: black;
-    border-radius: 50%;
-    margin-top: 3px ;
-    position: relative;
+  height: 20px;
+  width: 20px;
+  background: black;
+  border-radius: 50%;
+  margin-top: 3px;
+  position: relative;
 }
 
-.colors  .option:nth-child(1){
-    background-color: #fff;
-    border: 1px solid grey;
+.colors .option:nth-child(1) {
+  background-color: #fff;
+  border: 1px solid grey;
 }
 
-.colors  .option:nth-child(2){
-    background-color: #000;
+.colors .option:nth-child(2) {
+  background-color: #000;
 }
 
-.colors  .option:nth-child(3){
-    background-color: rgb(254, 2, 2);
+.colors .option:nth-child(3) {
+  background-color: rgb(254, 2, 2);
 }
 
-.colors  .option:nth-child(4){
-    background-color: rgb(5, 254, 1);
+.colors .option:nth-child(4) {
+  background-color: rgb(5, 254, 1);
 }
 
-.colors  .option:nth-child(5){
-    background-color: rgb(0, 144, 254);
+.colors .option:nth-child(5) {
+  background-color: rgb(0, 144, 254);
 }
 
 .colors .option.selected::before {
-    position: absolute;
-    content: "";
-    top: 10%;
-    left: 10%;
-    height: 12px;
-    width: 12px;
-    background: inherit;
-    border-radius: inherit;
-    border: 2px solid #fff;
-    transition: translate(-50%, -50%);
+  position: absolute;
+  content: "";
+  top: 10%;
+  left: 10%;
+  height: 12px;
+  width: 12px;
+  background: inherit;
+  border-radius: inherit;
+  border: 2px solid #fff;
+  transition: translate(-50%, -50%);
 }
 
-.colors .option:first-child:hover::before{
-    border-color: #ccc;
+.colors .option:first-child:hover::before {
+  border-color: #ccc;
 }
 
 .option #color-picker {
-    opacity: 0;
-    cursor: pointer;
+  opacity: 0;
+  cursor: url("/assets/images/bucket.png"), auto;
 }
 
 .buttons button {
-    width: 100%;
-    color: #fff;
-    border: none;
-    outline: none;
-    padding: 11px 0;
-    font-size: 0.9rem;
-    margin-bottom: 13px;
-    background: none;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 100%;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 11px 0;
+  font-size: 0.9rem;
+  margin-bottom: 13px;
+  background: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .buttons .clear-canvas {
-    color: black;
-    border: 1px solid black;
-    transition: all 0.3s ease;
+  color: black;
+  border: 1px solid black;
+  transition: all 0.3s ease;
 }
 
-.clear-canvas:hover{
-    color: #fff;
-    background: grey;
+.clear-canvas:hover {
+  color: #fff;
+  background: grey;
 }
 
 .buttons .save-img {
-    background: #0075ff;
-    border: 1px solid #0075ff;
+  background: #0075ff;
+  border: 1px solid #0075ff;
 }
 
 .drawing-board {
-    flex: 1;
+  flex: 1;
 }
 
 .drawing-board canvas {
-    cursor: crosshair;
-    width: 100%;
-    height: 100%;
+  cursor: url("/assets/images/pencil.png"), auto;
+  width: 100%;
+  height: 100%;
 }
 
 .selectFormat {
-    width: 100%; 
-    margin-bottom: 4px;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.drawing-board canvas#brush {
+  cursor: url("/assets/images/brush.png"), auto;
+}
+
+.drawing-board canvas#eraser {
+  cursor: url("/assets/images/eraser.png"), auto;
+}
+
+.colors .options .option {
+  cursor: url("/assets/images/bucket.png"), auto;
 }
