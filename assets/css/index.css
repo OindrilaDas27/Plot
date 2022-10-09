@@ -41,6 +41,7 @@ body {
   background: var(--action-bar-bg);
   white-space: nowrap;
   overflow-x: auto;
+  user-select: none;
 }
 
 .action-group {
@@ -95,8 +96,7 @@ body {
   border: 0;
 }
 
-.tools,
-#colors {
+.tools {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 0.25rem;
@@ -120,6 +120,16 @@ body {
 }
 
 /* colors */
+#colors {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-column-gap: 0.25rem;
+}
+
+#colors .color.selected {
+  border: 1px solid var(--active-bg);
+}
+
 #colors-wrapper {
   display: flex;
   gap: 0.5rem;
@@ -144,9 +154,12 @@ body {
   padding: 0.25rem;
 }
 
+#colors .color {
+  border: 1px solid var(--border);
+}
+
 #colors .color:nth-child(1) {
   background-color: #fff;
-  border: 1px solid grey;
 }
 
 #colors .color:nth-child(2) {
