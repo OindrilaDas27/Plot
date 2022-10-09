@@ -54,6 +54,17 @@ text-decoration-thickness: 0.5px;
   margin: 10px 0 0 5px;
 }
 
+.fa-solid {
+    margin-right: 10px;
+
+}
+
+.tool:hover{
+    font-size: 120%;
+    color: #0075ff;
+    font-weight: bolder;
+}
+
 .row .options .option {
   display: flex;
   cursor: pointer;
