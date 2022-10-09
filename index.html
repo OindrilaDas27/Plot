@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
@@ -14,9 +15,9 @@
             <div class="row">
                 <label class="title">Shapes</label>
                 <ul class="options">
-                    <li class="option tool" id="rectangle">Rectangle</li>
-                    <li class="option tool" id="circle">Circle</li>
-                    <li class="option tool" id="triangle">Triangle</li>
+                    <li class="option tool" id="rectangle"><i class="fa-solid fa-square"></i>Rectangle</li>
+                    <li class="option tool" id="circle"><i class="fa-solid fa-circle"></i>Circle</li>
+                    <li class="option tool" id="triangle"><i class="fa-solid fa-play"></i>Triangle</li>
                     <li class="option">
                         <input type="checkbox" id="fill-color">
                         <label for="fill-color">Fill color</label>
@@ -27,8 +28,8 @@
             <div class="row">
                 <label class="title">Options</label>
                 <ul class="options">
-                    <li class="option active tool" id="brush">Brush</li>
-                    <li class="option tool" id="eraser">Eraser</li>
+                    <li class="option active tool" id="brush"><i class="fa-solid fa-paintbrush"></i>Brush</li>
+                    <li class="option tool" id="eraser"><i class="fa-solid fa-eraser"></i>Eraser</li>
                     <li class="option">
                         <input type="range" id="size-slider" min = "1" max = "30" value ="5">
                     </li>
