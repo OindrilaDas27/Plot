@@ -187,23 +187,23 @@ body {
 }
 
 canvas {
-  cursor: url("../images/pencil.png"), auto;
+  cursor: url("/assets/images/pencil.png"), auto;
 }
 
 canvas#pencil {
-  cursor: url("../images/pencil.png"), auto;
+  cursor: url("/assets/images/pencil.png"), auto;
 }
 
 canvas#brush {
-  cursor: url("../images/brush.png"), auto;
+  cursor: url("/assets/images/brush.png"), auto;
 }
 
 canvas#eraser {
-  cursor: url("../images/eraser.png"), auto;
+  cursor: url("/assets/images/eraser.png"), auto;
 }
 
 canvas#bucket {
-  cursor: url("../images/bucket.png"), auto;
+  cursor: url("/assets/images/bucket.png"), auto;
 }
 
 canvas#rectangle,
