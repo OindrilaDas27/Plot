@@ -3,7 +3,7 @@ toolBtns = document.querySelectorAll(".tool"),
 fillColor = document.querySelector("#fill-color"),
 sizeSlider = document.querySelector("#size-slider"),
 colorBtns = document.querySelectorAll(".colors .option"),
-// colorPicker = document.querySelectorAll("#color-picker"),
+colorPicker = document.querySelector("#color-picker"),
 ctx = canvas.getContext("2d");
 
 // global variables with default values
@@ -98,10 +98,10 @@ colorBtns.forEach(btn => {
 
 });
 
-// colorPicker.addEventListener("change", () => {
-//     colorPicker.parentElement.style.background = colorPicker.value;
-//     colorPicker.parentElement.click();
-// });
+colorPicker.addEventListener("change", () => {
+    colorPicker.parentElement.style.background = colorPicker.value;
+    colorPicker.parentElement.click();
+});
 
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
