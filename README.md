@@ -4,7 +4,7 @@
 <div align="center">
 
 [![Welcome to my profile](https://img.shields.io/badge/Hello,Programmer!-Welcome-blue.svg?style=flat&logo=github)](https://github.com/GDSC-IIIT-Kalyani)
-[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/GDSC-IIIT-Kalyani/Winter-of-Code-2.0-frontend)
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/GDSC-IIIT-Kalyani/Plot)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 </div>
@@ -25,18 +25,18 @@
 
 For the quick start, you can follow the steps below:
 
-1. Star <a href="https://github.com/GDSC-IIIT-Kalyani/Winter-of-Code-2.0-frontend" title="this">this</a> repository.
-2. Fork <a href="https://github.com/GDSC-IIIT-Kalyani/Winter-of-Code-2.0-frontend" title="this">this</a> repository.
+1. Star <a href="https://github.com/GDSC-IIIT-Kalyani/Plot" title="this">this</a> repository.
+2. Fork <a href="https://github.com/GDSC-IIIT-Kalyani/Plot" title="this">this</a> repository.
 3. Clone the **forked** repository.
 
 ```yml
-git clone https://github.com/<your-github-username>/
+git clone https://github.com/<your-github-username>/Plot.git
 ```
 
 3. Navigate to the project directory.
 
 ```py
-cd 
+cd Plot
 ```
 
 4. Create a new branch.
